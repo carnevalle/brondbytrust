@@ -1,0 +1,20 @@
+@import "../bootstrap/less/mixins.less";
+//@import "colors.less";
+
+.btn-bstblue {
+  .buttonBackground(@bstblue, lighten(@bstblue,10%));
+  color: @bstyellow;
+}
+
+.btn-bstyellow {
+  .buttonBackground(@bstyellow, lighten(@bstyellow,10%));
+  color: @bstblue;
+}
+
+.btn-bstred {
+  .buttonBackground(lighten(@bstred,10%), @bstred);
+}
+
+.btn-bstgreen {
+  .buttonBackground(@bstgreen,darken(@bstgreen,10%));
+}

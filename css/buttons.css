@@ -1,0 +1,58 @@
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+.hide-text {
+  font: a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.btn-bstblue {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #00344d;
+  background-image: -moz-linear-gradient(top, #00344d, #00344d);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#00344d), to(#00344d));
+  background-image: -webkit-linear-gradient(top, #00344d, #00344d);
+  background-image: -o-linear-gradient(top, #00344d, #00344d);
+  background-image: linear-gradient(to bottom, #00344d, #00344d);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff00344d', endColorstr='#ff00344d', GradientType=0);
+  border-color: #00344d #00344d #000000;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #00344d;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-bstblue:hover,
+.btn-bstblue:active,
+.btn-bstblue.active,
+.btn-bstblue.disabled,
+.btn-bstblue[disabled] {
+  color: #ffffff;
+  background-color: #00344d;
+  *background-color: #002333;
+}
+.btn-bstblue:active,
+.btn-bstblue.active {
+  background-color: #00121a \9;
+}

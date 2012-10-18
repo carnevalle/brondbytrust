@@ -4,15 +4,16 @@
 @import "colors.less";
 @import "buttons.less";
 @import "social.less";
+@import "typography.less";
 
 body{
-	font-family: "Kontrapunkt";
 	color: @bstblue;
 	//background-image: url('../img/tiny_grid.png');
 	//background-image: url('../img/square_bg.png');
 	//background-image: url('../img/subtle_dots.png');
 	//background-image: url('../img/noise.png');
-	background-image: url('../img/bg_texture.jpg');
+	//background-image: url('../img/bg_texture.jpg');
+	background-image: url('../img/bg_mesh.png');
 	background-color: @bstgrey;
 }
 
@@ -57,17 +58,22 @@ body{
 		#gradient > .vertical(lighten(@bstblue,10%), @bstblue);
 		background-image: url('../img/noise.png');	
 		border-radius: 0px;
-		.box-shadow(0 4px 10px rgba(0,0,0,.25));
+		.box-shadow(0 2px 2px rgba(0,0,0,.25));
 		border-bottom: 3px solid @bstyellow;
 
 		.brand{
 			color: @bstyellow;
 			font-size: 22px;
+		
 			img{
 				height: 50px;
 				margin-right: 10px;
 
 			}
+
+			@media (max-width: 480px) {
+				font-size: 18px;
+			}			
 		}
 
 		.nav{
@@ -81,21 +87,22 @@ body{
 
 				> a{
 					color: @bstwhite;
-					font-weight: bold;
+					font-weight: normal;
 					text-shadow: 1px 2px rgb(0,0,0);
 					font-size:18px;
+					padding-right: 10px;
 
 					&:hover{
 						color: @bstyellow;
 						text-shadow: -1px -1px #000000;
 					}
 
-					&.buy{
-						color: @bstgreen;
-					}
+
 				}						
 			}
-
+			.buy > a{
+				color: @bstgreen;
+			}
 			.active > a{
 				background-color: @bstblue;
 			}
@@ -104,7 +111,7 @@ body{
 }
 
 .round-text-box{
-	.border-radius(6px);
+	.border-radius(3px);
 	background-color: @bstwhite;
 	.box-shadow(1px 1px 5px rgba(0,0,0,.3));
 	padding: 15px 30px;
@@ -130,7 +137,7 @@ body{
 }
 
 .rounded-box{
-	.border-radius(6px);
+	.border-radius(3px);
 
 	//background-color: darken(@bstgrey,20%);
 	background-color: @bstwhite;
@@ -268,17 +275,29 @@ ul.list{
 	a{
 		color: @bstyellow;
 	}
+
+	li{
+		a{
+			color: @bstwhite;
+		}
+	}
 }
 
 
 .product-table{
 	margin-top: 50px;
+	margin-bottom: 50px;
 	.clearfix();
 	>div{
 		width: 20%;
 		float: left;
 		
-		@media (max-width: 767px) {
+
+		@media (min-width: 526px) and (max-width: 978px){
+			width: 33.333%;
+			margin-bottom: 25px;
+		}		
+		@media (max-width: 525px) {
 			//float: none;
 			width: 50%;
 			margin-bottom: 25px;
@@ -308,6 +327,15 @@ ul.list{
 			.productname{
 				margin-bottom: 10px;
 				font-size: 24px;
+				@media (min-width: 979px) and (max-width: 1199px){
+					font-size: 18px;
+				}	
+				@media (min-width: 768px) and (max-width: 978px){
+					font-size: 15px;
+				}
+				@media (max-width: 767px){
+					font-size: 18px;
+				}				
 				text-align: center;
 				font-weight: bold;				
 			}

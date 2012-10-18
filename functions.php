@@ -25,35 +25,60 @@ function brondbytrust_scripts_and_styles() {
 
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'twitter-bootstrap-js' );
-
-    /*
-    // modernizr (without media query polyfill)
-    wp_register_script( 'bones-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
-
-    // register main stylesheet
-    wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );
-
-    // ie-only style sheet
-    wp_register_style( 'bones-ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
-
-
-    // comment reply script for threaded comments
-    if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
-      wp_enqueue_script( 'comment-reply' );
-    }
-
-    //adding scripts file in the footer
-    wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
-
-    // enqueue styles and scripts
-    wp_enqueue_script( 'bones-modernizr' );
-    wp_enqueue_style( 'bones-stylesheet' );
-    wp_enqueue_style('bones-ie-only');
-    /*
-
-    wp_enqueue_script( 'jquery' );
-    wp_enqueue_script( 'bones-js' );
-    */
 }
 
+
+
+function brondbytrust_theme_support() {
+
+    // wp thumbnails (sizes handled in functions.php)
+    add_theme_support('post-thumbnails');
+
+    // default thumb size
+    set_post_thumbnail_size(125, 125, true);
+
+    // adding post format support
+    add_theme_support( 'post-formats',
+        array(
+            'aside',             // title less blurb
+            'gallery',           // gallery of images
+            'link',              // quick link to other site
+            'image',             // an image
+            'quote',             // a quick quote
+            'status',            // a Facebook like status update
+            'video',             // video
+            'audio',             // audio
+            'chat'               // chat transcript
+        )
+    );
+    
+    add_theme_support('automatic-feed-links');
+    add_theme_support( 'menus' );
+
+    register_nav_menus(
+        array(
+            'main-menu' => __( 'The Main Menu', 'brondbytrusttheme' ),   // main nav in header
+            'footer-links' => __( 'Footer Links', 'brondbytrusttheme' ) // secondary nav in footer
+        )
+    );
+}
+
+// Remove reviews on WooCommerce products
+remove_action( 'woocommerce_product_tabs', 'woocommerce_product_reviews_tab', 30);
+remove_action( 'woocommerce_product_tab_panels', 'woocommerce_product_reviews_panel', 30);
+
+// Remove ordering of products
+remove_action( 'woocommerce_pagination', 'woocommerce_catalog_ordering', 20 );
+//add_action( 'woocommerce_before_main_content', 'woocommerce_catalog_ordering', 20 );
+
+add_image_size( 'shop_fanaktie', 250, 200, true );
+/*
+        $shop_thumbnail_crop    = (get_option('woocommerce_thumbnail_image_crop')==1) ? true : false;
+        $shop_catalog_crop      = (get_option('woocommerce_catalog_image_crop')==1) ? true : false;
+        $shop_single_crop       = (get_option('woocommerce_single_image_crop')==1) ? true : false;
+
+        add_image_size( 'shop_thumbnail', $this->get_image_size('shop_thumbnail_image_width'), $this->get_image_size('shop_thumbnail_image_height'), $shop_thumbnail_crop );
+        add_image_size( 'shop_catalog', $this->get_image_size('shop_catalog_image_width'), $this->get_image_size('shop_catalog_image_height'), $shop_catalog_crop );
+        add_image_size( 'shop_single', $this->get_image_size('shop_single_image_width'), $this->get_image_size('shop_single_image_height'), $shop_single_crop );
+*/
 ?>

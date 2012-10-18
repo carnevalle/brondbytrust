@@ -1,29 +1,5 @@
 <?php get_header(); ?>
 
-<div class="navbar navbar-inverse">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="index.html">
-            <img src="<?php echo get_stylesheet_directory_uri()?>/img/bstlogo.png" class="logo hidden-phone"/> 
-            Brøndby Supporters Trust
-          </a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li><a href="page.html">Nyheder</a></li>
-              <li><a href="page.html">Foreningen</a></li>
-              <li><a href="page.html">Bliv medlem</a></li>
-              <li><a href="fanaktier.html" class="buy">Køb din fanaktie</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div class="front-feature">
       <div class="container">
         <div class="row">
@@ -72,42 +48,6 @@
           </div>
         </div>
       </div>
-      </div>
-    </div>
-
-    <div class="sponsors">
-      I samarbejde med
-      <img src="<?php echo get_stylesheet_directory_uri()?>/img/carlsberg_logo.gif" />
-      <img src="<?php echo get_stylesheet_directory_uri()?>/img/hummel-logo.jpg" />
-      <img src="<?php echo get_stylesheet_directory_uri()?>/img/glostrupfolkeblad.jpg" />
-    </div>
-    <div class="footer">
-      <div class="container">
-        <div class="row">
-          <div class="span4">
-            <h4>Brøndby Supporters Trust</h4>
-            Gammel Kirkevej 1<br/>
-            2605 Brøndby<br/>
-            CVR: 34542813<br/>
-            kontakt@brondbytrust.dk<br/>
-            Tlf. 43 42 75 75<br/><br/>
-
-            <a href="#">Læs vores salgsbetingelser</a><br/><br/>
-            <img src="<?php echo get_stylesheet_directory_uri()?>/img/dankort.gif" />
-          </div>
-          <div class="span4">
-            <h4>Seneste nyheder</h4>
-            <ul class="unstyled list">
-              <li><a href="#">Brøndby Supporters Trust lancerer banebrydende koncept</a></li>
-              <li><a href="#">dsfdsf</a></li>
-              <li><a href="#">dsfdsf</a></li>
-            </ul>
-
-          </div>
-          <div class="span4">       
-        
-          </div>
-        </div>
       </div>
     </div>
 

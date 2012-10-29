@@ -116,7 +116,7 @@ body{
 					color: @bstwhite;
 					font-weight: bold;
 					text-shadow: 1px 2px rgb(0,0,0);
-					font-size:18px;
+					font-size:16px;
 					padding-right: 10px;
 
 					&:hover{
@@ -329,6 +329,16 @@ ul.list{
 			>div{
 				.productname{
 					font-size: 18px;
+
+					@media (min-width: 979px) and (max-width: 1199px){
+						font-size: 14px;
+					}	
+					@media (min-width: 768px) and (max-width: 978px){
+						font-size: 12px;
+					}
+					@media (max-width: 767px){
+						font-size: 18px;
+					}
 				}
 			}			
 		}
@@ -371,6 +381,10 @@ ul.list{
 				margin-bottom: 10px;
 			}
 			.productname{
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				overflow: hidden;
+
 				font-family: "Kontrapunkt";
 				background-color: @bstlightblue;
 				text-shadow: 1px 2px rgba(0,0,0,0.5);

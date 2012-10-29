@@ -4,7 +4,29 @@
   	<head>
 	    <meta charset="utf-8">
 
-		<title><?php wp_title(''); ?> | <?php bloginfo('name'); ?></title>
+
+		<title><?php
+			/*
+			 * Print the <title> tag based on what is being viewed.
+			 */
+			global $page, $paged;
+
+			wp_title( '|', true, 'right' );
+
+			// Add the blog name.
+			bloginfo( 'name' );
+
+			// Add the blog description for the home/front page.
+			$site_description = get_bloginfo( 'description', 'display' );
+			if ( $site_description && ( is_home() || is_front_page() ) )
+				echo " | $site_description";
+
+			// Add a page number if necessary:
+			if ( $paged >= 2 || $page >= 2 )
+				echo ' | ' . sprintf( __( 'Page %s', 'twentyeleven' ), max( $paged, $page ) );
+
+			?></title>
+		<!-- <title><?php wp_title(''); ?> | <?php bloginfo('name'); ?></title> -->
 
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,8 +65,22 @@
 				<?php global $woocommerce; ?>
 
 					<ul class="nav">
-					<?php wp_nav_menu($args); ?>
-					<li><a class="cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping cart', 'woothemes'); ?>"><?php echo sprintf(_n('%d stk', '%d stk', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?> - <?php echo $woocommerce->cart->get_cart_total(); ?></a></li>
+						<?php wp_nav_menu($args); ?>
+
+						<?php if(!is_page( "cart" ) && !is_page( "checkout" )): ?>
+						<li class="shopping-cart-menu">
+							<a class="cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping cart', 'woothemes'); ?>">
+								<i class="icon-shopping-cart icon-white"></i>
+								<?php
+									if($woocommerce->cart->cart_contents_count > 0){
+										echo sprintf(_n('%d stk', '%d stk', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?> - <?php echo $woocommerce->cart->get_cart_total(); 
+									}else{
+										echo "Ingen varer i kurv";
+									}
+								?>
+							</a>
+						</li>
+						<?php endif; ?>
 					</ul>
 
 				</div>

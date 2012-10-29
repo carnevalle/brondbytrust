@@ -80,6 +80,383 @@
 	}
 }
 
+.shopping-cart-menu{
+	background-color: rgba(0,0,0,0.1);
+	border-radius: 10px;
+
+	@media (min-width: 979px){
+		position: fixed;
+		right: 0px;
+	}
+}
+
 .cart-contents{
 	color: @bstyellow !important;
+	font-size: 14px !important;
+}
+
+/*--[ Quantity incrementer ]--------------------------------------------------------------------------------*/
+.quantity {
+  overflow: hidden;
+  zoom: 1;
+  width: 96px;
+  margin-bottom: .5em;
+}
+.quantity input.qty {
+  width: 20px;
+  padding: 5px 10px;
+  font-size: 14px !important;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  border: 1px solid #e6e6e6;
+  border-right: 0;
+  border-left: 0;
+  text-align: center;
+  float: left;
+  z-index: 10;
+}
+.quantity .plus,
+.quantity .minus {
+  width: 28px;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 14px !important;
+  border: 1px solid #ccc;
+  background: #ffffff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e6e6e6));
+  background: -webkit-linear-gradient(#ffffff, #e6e6e6);
+  background: -moz-linear-gradient(center top, #ffffff 0%, #e6e6e6 100%);
+  background: -moz-gradient(center top, #ffffff 0%, #e6e6e6 100%);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  float: left;
+  z-index: 20;
+}
+.quantity .plus:hover,
+.quantity .minus:hover {
+  background: #ffffff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#f6f6f6));
+  background: -webkit-linear-gradient(#ffffff, #f6f6f6);
+  background: -moz-linear-gradient(center top, #ffffff 0%, #f6f6f6 100%);
+  background: -moz-gradient(center top, #ffffff 0%, #f6f6f6 100%);
+}
+.quantity .plus {
+  float: right;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.quantity .minus {
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+
+/*--[ Tables (should be in canvas really) ]--------------------------------------------------------------------------------*/
+table {
+  width: 100%;
+  margin-bottom: 1.5em;
+  border-collapse: separate;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid #eee\9;
+  border-left: 1px solid #eee\9;
+}
+table th,
+table td {
+  vertical-align: top;
+  padding: .5em 1em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 2px solid rgba(0, 0, 0, 0.025);
+  border-bottom: 1px solid #eee\9;
+  border-right: 1px solid #eee\9;
+  border-top: 2px solid #f6f6f6\9;
+  text-align: left;
+}
+table th {
+  background: rgba(0, 0, 0, 0);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.05)));
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.05));
+  background: -moz-linear-gradient(center top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 100%);
+  background: -moz-gradient(center top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 100%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.7);
+  -webkit-box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.7);
+  -moz-box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.7);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+table tr:first-child th,
+table tr:first-child td {
+  border-top: 0;
+}
+table tbody tr:first-child th,
+table tbody tr:first-child td {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 2px solid rgba(0, 0, 0, 0.025);
+  border-bottom: 1px solid #eee\9;
+  border-top: 1px solid #f6f6f6\9;
+}
+table tbody:first-child tr:first-child th,
+table tbody:first-child tr:first-child td {
+  border-top: 0;
+}
+table.cart .product-remove,
+table.cart .product-thumbnail,
+table.cart .product-price {
+  position: absolute;
+  left: -999em;
+}
+table.cart .actions {
+  text-align: right;
+}
+table.cart .actions .coupon {
+  float: left;
+}
+table.cart img {
+  padding: 3px !important;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+table.my_account_orders {
+  font-size: 0.8751em;
+}
+.cart_totals select {
+  width: 100%;
+}
+/*--[ The cart ]--------------------------------------------------------------------------------*/
+table.cart img {
+  width: 32px;
+  height: auto;
+}
+table.cart td.actions .coupon {
+  text-align: left;
+  margin-bottom: 0;
+}
+table.cart td.actions .coupon label {
+  display: none;
+}
+table.cart td.actions .coupon #shareyourcart_button {
+  float: left;
+}
+table.cart td.actions .button,
+table.cart td.actions .checkout-button,
+table.cart td.actions .input-text {
+  width: 100%;
+  display: block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-bottom: .5em !important;
+  text-align: center;
+}
+table.cart td.actions .checkout-button {
+  margin-bottom: 0 !important;
+}
+.cart-collaterals {
+  overflow: hidden;
+  zoom: 1;
+}
+.cart-collaterals .cart_totals,
+.cart-collaterals .shipping_calculator,
+.cart-collaterals .cross-sells {
+  width: 48%;
+  float: right;
+}
+.cart-collaterals .shipping_calculator {
+  clear: right;
+}
+.cart-collaterals .cross-sells {
+  float: left;
+}
+.cart-collaterals .cross-sells ul.products li {
+  width: 48%;
+}
+
+
+
+/* Checkout */
+.checkout {
+  zoom: 1;
+}
+.checkout label {
+  display: block;
+}
+.checkout textarea {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+
+}
+.checkout .input-text {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+
+}
+.checkout ul.payment_methods {
+  text-align: left;
+  margin: 1.2em 0;
+  padding: 0 0 10px 3px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.checkout ul.payment_methods label {
+  display: inline;
+  font-weight: bold;
+}
+.checkout ul.payment_methods li {
+  line-height: 2em;
+  text-align: left;
+  list-style: none;
+  margin: 0 !important;
+  font-weight: normal;
+}
+.checkout ul.payment_methods li input {
+  margin: 0 1em 0 0 !important;
+}
+.checkout ul.payment_methods li img {
+  vertical-align: middle;
+  margin: -2px 0 0 0.5em;
+  position: relative;
+}
+.checkout ul.payment_methods .payment_box {
+  background: #fafafa;
+  border: 1px solid #e1e1e1;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  margin: .618em 0 1em;
+  padding: 10px;
+  line-height: 1.8;
+  font-style: italic;
+  box-shadow: inset 0 0 0 1px #ffffff;
+  -webkit-box-shadow: inset 0 0 0 1px #ffffff;
+  -moz-box-shadow: inset 0 0 0 1px #ffffff;
+  -o-box-shadow: inset 0 0 0 1px #ffffff;
+  margin-right: 2px;
+}
+.checkout ul.payment_methods .payment_box p {
+  margin: 0;
+}
+.checkout ul.payment_methods .payment_box fieldset label {
+  display: block;
+}
+.checkout ul.payment_methods .payment_box fieldset select {
+  min-width: 48%;
+}
+.checkout ul.payment_methods + .form-row {
+  width: 100%;
+}
+.checkout ul.payment_methods + .form-row #place_order {
+  float: right;
+}
+.checkout ul.payment_methods + .form-row input {
+  float: none;
+}
+.checkout ul.payment_methods + .form-row label {
+  display: inline;
+}
+.checkout #shiptobilling {
+  float: right;
+  margin-top: 5px;
+  margin-bottom: 0;
+  text-align: right;
+  font-size: 0.9em;
+}
+.checkout #shiptobilling input {
+  float: none;
+}
+.checkout #shiptobilling label {
+  font-weight: normal;
+  display: inline;
+}
+.checkout #order_review .shop_table th {
+  padding: 4px;
+}
+.checkout #order_review .shop_table th,
+.checkout #order_review .shop_table td {
+  vertical-align: middle;
+}
+#payment .button {
+  padding: 8px 20px 6px;
+  font-size: 1.5em;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+  .col2-set {
+    clear: both;
+  }
+  .col2-set:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .col2-set .col-1 {
+    width: 49%;
+    float: left;
+  }
+  .col2-set .col-2 {
+    width: 49%;
+    float: right;
+  }
+  .form-row {
+    width: 49%;
+    float: left;
+  }
+  .form-row label {
+    display: block;
+  }
+  .form-row .input-text,
+  .form-row select {
+    width: 100%;
+    *width: 90%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .form-row input[type=checkbox] {
+    float: left;
+  }
+  .form-row.notes {
+    width: 100%;
+  }
+  .form-row.notes textarea {
+    width: 100%;
+    *width: 90%;
+  }
+  .form-row-first {
+    clear: left;
+  }
+  .form-row-last {
+    float: right;
+  }
+  .form-row-wide {
+    float: left;
+    width: 100%;
+    clear: both;
+  }
 }

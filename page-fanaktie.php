@@ -1,3 +1,8 @@
+<?php
+/**
+ * Template Name: Fanaktier
+ */
+?>
 <?php get_header(); ?>
 
 <div class="main">
@@ -66,5 +71,6 @@
 		}
 
       	?>
-
+	</div>
+</div>
 <?php get_footer(); ?>

@@ -51,7 +51,8 @@ get_header('shop'); ?>
 
 			<?php do_action('woocommerce_before_shop_loop'); ?>
 
-			<ul class="products">
+			<!-- <ul class="products thumbnails"> -->
+			<div class="product-table">
 
 				<?php woocommerce_product_subcategories(); ?>
 
@@ -61,7 +62,8 @@ get_header('shop'); ?>
 
 				<?php endwhile; // end of the loop. ?>
 
-			</ul>
+			<!-- </ul> -->
+			</div>
 
 			<?php do_action('woocommerce_after_shop_loop'); ?>
 

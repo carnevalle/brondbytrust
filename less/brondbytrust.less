@@ -5,6 +5,7 @@
 @import "buttons.less";
 @import "social.less";
 @import "typography.less";
+@import "webshop.less";
 
 body{
 	color: @bstblue;
@@ -13,17 +14,37 @@ body{
 	//background-image: url('../img/subtle_dots.png');
 	//background-image: url('../img/noise.png');
 	//background-image: url('../img/bg_texture.jpg');
-	background-image: url('../img/bg_mesh.png');
+	//background-image: url('../img/bg_mesh.png');
 	background-color: @bstgrey;
+	
 }
 
 @media (max-width: 767px) {
+
+	// Padding to set content in a bit
+	body {
+		padding-left: 0px;
+		padding-right: 0px;
+		.container{
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
 
 	.front-feature{
 		iframe{
 			height: 300px;
 		}
 		min-height: 300px;
+	}
+
+	ul.unstyled{
+		li{
+			a{
+				padding: 10px 0;
+			}
+			font-size: 1.2em;
+		}
 	}
 
 }
@@ -36,7 +57,7 @@ body{
 		.buttonBackground(lighten(@bstblue, 5%), @bstblue);
 
 
-		@media (min-width: 768px) and (max-width: 979px) {
+		@media (max-width: 979px) {
 			margin-top: 20px;
 		}
 		/*
@@ -59,16 +80,22 @@ body{
 		background-image: url('../img/noise.png');	
 		border-radius: 0px;
 		.box-shadow(0 2px 2px rgba(0,0,0,.25));
-		border-bottom: 3px solid @bstyellow;
+		border-bottom: 1px solid @bstyellow;
 
 		.brand{
 			color: @bstyellow;
-			font-size: 22px;
-		
+			font-size: 20px;
+			font-weight: bold;
+			line-height: 50px;
 			img{
 				height: 50px;
-				margin-right: 10px;
+				margin-right: 5px;
+			}
 
+			@media (min-width: 980px) and (max-width: 1199px) {
+				.sitename{
+					display:none;
+				}
 			}
 
 			@media (max-width: 480px) {
@@ -87,7 +114,7 @@ body{
 
 				> a{
 					color: @bstwhite;
-					font-weight: normal;
+					font-weight: bold;
 					text-shadow: 1px 2px rgb(0,0,0);
 					font-size:18px;
 					padding-right: 10px;
@@ -223,7 +250,7 @@ ul.list{
 	}
 
 	p{
-		text-align: justify;
+		
 	}
 }
 
@@ -245,6 +272,9 @@ ul.list{
 
 .main{
 	margin: 30px 0 30px 0;
+	@media (max-width: 767px) {
+		margin-top: 10px;
+	}	
 	min-height: 400px;
 }
 
@@ -260,7 +290,7 @@ ul.list{
 }
 
 .footer{
-	border-top: 4px solid @bstyellow;
+	border-top: 2px solid @bstyellow;
 	//.box-shadow(-2px -3px 3px rgba(0,0,0,.25));
 	background-color: @bstblue;
 	//#gradient > .vertical(darken(@bstblue,2%),@bstblue);
@@ -285,13 +315,28 @@ ul.list{
 
 
 .product-table{
-	margin-top: 50px;
-	margin-bottom: 50px;
 	.clearfix();
+
+	&.sidebar{
+		>div{
+			width: 50%;
+			margin-bottom: 25px;
+
+			&:nth-child(3n+3){
+				clear: left;
+			}
+
+			>div{
+				.productname{
+					font-size: 18px;
+				}
+			}			
+		}
+	}
+
 	>div{
 		width: 20%;
 		float: left;
-		
 
 		@media (min-width: 526px) and (max-width: 978px){
 			width: 33.333%;
@@ -308,25 +353,35 @@ ul.list{
 		>div{
 			text-align: center;
 			img{
-				height: 200px;
 				width: 100%;
 			}
 			
 			padding: 3px;
 			.pricetag{
+				font-family: "Kontrapunkt";
 				border-bottom-left-radius: 5px;
 				border-bottom-right-radius: 5px;
 				padding: 5px;
-				font-size: 24px;
+				font-size: 20px;
 				text-align: center;
 				font-weight: bold;
-				color: white;
-				background-color: lighten(@bstblue,10%);
+				color: @bstyellow;
+				background-color: @bstlightblue;
 				text-shadow: 1px 2px rgba(0,0,0,0.5);
+				margin-bottom: 10px;
 			}
 			.productname{
-				margin-bottom: 10px;
-				font-size: 24px;
+				font-family: "Kontrapunkt";
+				background-color: @bstlightblue;
+				text-shadow: 1px 2px rgba(0,0,0,0.5);
+				color: white;
+				a{
+					color: white;
+				}
+				padding: 5px;
+				border-top-left-radius: 5px;
+				border-top-right-radius: 5px;				
+				font-size: 20px;
 				@media (min-width: 979px) and (max-width: 1199px){
 					font-size: 18px;
 				}	

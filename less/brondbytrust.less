@@ -106,9 +106,18 @@ body{
 
 		.nav{
 
+			.dropdown-menu .active > a, .dropdown-menu .active > a:hover{
+				#gradient.vertical(@bstblue, @bstblue);
+			}
+
+			.caret{
+				margin-top: 24px;
+				border-top-color: @bstyellow !important;
+				border-border-color: @bstyellow !important;
+			}
+
 			.current-menu-item{
-				a{
-					text-decoration: underline;
+				> a{
 					color: @bstyellow;
 				}
 			}

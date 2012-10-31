@@ -55,10 +55,11 @@
 				<?php
 					$args = array(
 						'theme_location' => 'main-menu',
-						'depth'		 => 1,
+						'depth'		 => 2,
 						'container'	 => false,
 						'menu_class'	 => 'nav',
-						'items_wrap' => '%3$s'
+						'items_wrap' => '%3$s',
+						'walker'	 => new Bootstrap_Walker_Nav_Menu()
 					);
 				?>
 					

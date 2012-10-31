@@ -10,12 +10,7 @@
 		  <div class="container">
 		    <div class="row">
 		      <div class="span4">
-		        <h4>Seneste nyheder</h4>
-		        <ul class="unstyled list">
-		          <li><a href="#">Brøndby Supporters Trust lancerer banebrydende koncept</a></li>
-		          <li><a href="#">dsfdsf</a></li>
-		          <li><a href="#">dsfdsf</a></li>
-		        </ul>
+				<?php dynamic_sidebar('footer_left_widget'); ?>
 		      </div>
 		      <div class="span4">
 

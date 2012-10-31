@@ -33,8 +33,6 @@ function brondbytrust_scripts_and_styles() {
     wp_enqueue_script( 'twitter-bootstrap-js' );
 }
 
-
-
 function brondbytrust_theme_support() {
 
     // wp thumbnails (sizes handled in functions.php)
@@ -68,6 +66,23 @@ function brondbytrust_theme_support() {
         )
     );
 }
+
+/**
+ * Register our sidebars and widgetized areas.
+ *
+ */
+function brondbytrust_widgets_init() {
+
+    register_sidebar( array(
+        'name' => 'footer_left_widget',
+        'id' => 'footer_left_widget',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '<h4>',
+        'after_title' => '</h4>',
+    ) );
+}
+add_action( 'widgets_init', 'brondbytrust_widgets_init' );
 
 // Remove reviews on WooCommerce products
 remove_action( 'woocommerce_product_tabs', 'woocommerce_product_reviews_tab', 30);
@@ -131,7 +146,24 @@ function woocommerce_breadcrumb( $args = array() ) {
 }
 
 function woocommerce_output_related_products() {
-woocommerce_related_products(4,4); // Display 3 products in rows of 3
+    woocommerce_related_products(4,4); // Display 3 products in rows of 3
+}
+
+// Hook in
+add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
+ 
+// Our hooked in function - $fields is passed via the filter!
+function custom_override_checkout_fields( $fields ) {
+
+     $fields['order']['order_bstmember'] = array(
+        'label'     => __('BST Medlemsnummer', 'woocommerce'),
+        'placeholder'   => _x('Indtast medlemsnummer til BST', 'placeholder', 'woocommerce'),
+        'required'  => false,
+        'class'     => array('form-row-wide'),
+        'clear'     => true
+     );
+ 
+     return $fields;
 }
 
 ?>

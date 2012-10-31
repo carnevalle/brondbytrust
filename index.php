@@ -5,7 +5,7 @@
         <div class="row">
           <div class="span8">
             <!--<iframe width="100%" height="400" src="http://www.youtube.com/embed/K38fpv5nMe4?rel=0" frameborder="0" allowfullscreen></iframe>-->
-            <!-- <iframe class="hidden-phone" id="ytplayer" type="text/html" width="100%" height="350" src="https://www.youtube.com/embed/GpTfqRu7Bu4?modestbranding=1&rel=0&showinfo=0&color=white&theme=light"frameborder="0" allowfullscreen></iframe> -->
+            <!-- <iframe class="hidden-phone" id="ytplayer" type="text/html" width="100%" height="350" src="https://www.youtube.com/embed/GpTfqRu7Bu4?modestbranding=1&rel=0&showinfo=0&color=white&theme=light"frameborder="0" allowfullscreen></iframe>-->
             <iframe class="hidden-phone" id="ytplayer" type="text/html" width="100%" height="350" src="https://www.youtube.com/embed/GpTfqRu7Bu4?autoplay=0&wmode=opaque&controls=0&rel=0&showinfo=0&HD=1" frameborder="0" allowfullscreen=""></iframe>
             <div class="visible-phone">Visible phone</div>
           </div>

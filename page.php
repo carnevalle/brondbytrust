@@ -3,7 +3,7 @@
 <div class="main">
 	<div class="container">
 		<div class="row">
-			<div class="span7">
+			<div class="span8">
 				<div class="round-text-box post">
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 						<span class="byline">Publiceret <?php echo the_time('j. F Y'); ?>, Kl. <?php the_time('H:i'); ?></span>

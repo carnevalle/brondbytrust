@@ -85,23 +85,15 @@ function theme_options_do_page() {
 
 			<table class="form-table">
 
-				<?php
-				/**
-				 * A sample checkbox option
-				 */
-				?>
+				<!--
 				<tr valign="top"><th scope="row"><?php _e( 'A checkbox', 'brondbytrust' ); ?></th>
 					<td>
 						<input id="brondbytrust_theme_options[option1]" name="brondbytrust_theme_options[option1]" type="checkbox" value="1" <?php checked( '1', $options['option1'] ); ?> />
 						<label class="description" for="brondbytrust_theme_options[option1]"><?php _e( 'Sample checkbox', 'brondbytrust' ); ?></label>
 					</td>
 				</tr>
+				
 
-				<?php
-				/**
-				 * A sample text input option
-				 */
-				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Some text', 'brondbytrust' ); ?></th>
 					<td>
 						<input id="brondbytrust_theme_options[sometext]" class="regular-text" type="text" name="brondbytrust_theme_options[sometext]" value="<?php esc_attr_e( $options['sometext'] ); ?>" />
@@ -109,11 +101,6 @@ function theme_options_do_page() {
 					</td>
 				</tr>
 
-				<?php
-				/**
-				 * A sample select input option
-				 */
-				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Select input', 'brondbytrust' ); ?></th>
 					<td>
 						<select name="brondbytrust_theme_options[selectinput]">
@@ -136,11 +123,6 @@ function theme_options_do_page() {
 					</td>
 				</tr>
 
-				<?php
-				/**
-				 * A sample of radio buttons
-				 */
-				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Radio buttons', 'brondbytrust' ); ?></th>
 					<td>
 						<fieldset><legend class="screen-reader-text"><span><?php _e( 'Radio buttons', 'brondbytrust' ); ?></span></legend>
@@ -165,18 +147,46 @@ function theme_options_do_page() {
 						</fieldset>
 					</td>
 				</tr>
+				-->
 
-				<?php
-				/**
-				 * A sample textarea option
-				 */
-				?>
-				<tr valign="top"><th scope="row"><?php _e( 'A textbox', 'brondbytrust' ); ?></th>
+				<tr valign="top"><th scope="row"><?php _e( 'Venstre kolonne overskrift', 'brondbytrust' ); ?></th>
 					<td>
-						<textarea id="brondbytrust_theme_options[sometextarea]" class="large-text" cols="50" rows="10" name="brondbytrust_theme_options[sometextarea]"><?php echo esc_textarea( $options['sometextarea'] ); ?></textarea>
-						<label class="description" for="brondbytrust_theme_options[sometextarea]"><?php _e( 'Sample text box', 'brondbytrust' ); ?></label>
+						<input id="brondbytrust_theme_options[frontpage-left-header]" class="regular-text" type="text" name="brondbytrust_theme_options[frontpage-left-header]" value="<?php esc_attr_e( $options['frontpage-left-header'] ); ?>" />
+						<label class="description" for="brondbytrust_theme_options[frontpage-left-header]"><?php _e( 'Overskrift til venstre kolonne', 'brondbytrust' ); ?></label>
 					</td>
 				</tr>
+				<tr valign="top"><th scope="row"><?php _e( 'Forside venstre kolonne', 'brondbytrust' ); ?></th>
+					<td>
+						<textarea id="brondbytrust_theme_options[frontpage-left-text]" class="large-text" cols="30" rows="10" name="brondbytrust_theme_options[frontpage-left-text]"><?php echo esc_textarea( $options['frontpage-left-text'] ); ?></textarea>
+						<label class="description" for="brondbytrust_theme_options[frontpage-left-text]"><?php _e( 'Tekst til forsidens venstre kolonne', 'brondbytrust' ); ?></label>
+					</td>
+				</tr>
+
+				<tr valign="top"><th scope="row"><?php _e( 'Midterste kolonne overskrift', 'brondbytrust' ); ?></th>
+					<td>
+						<input id="brondbytrust_theme_options[frontpage-middle-header]" class="regular-text" type="text" name="brondbytrust_theme_options[frontpage-middle-header]" value="<?php esc_attr_e( $options['frontpage-middle-header'] ); ?>" />
+						<label class="description" for="brondbytrust_theme_options[frontpage-middle-header]"><?php _e( 'Overskrift til midterste kolonne', 'brondbytrust' ); ?></label>
+					</td>
+				</tr>				
+				<tr valign="top"><th scope="row"><?php _e( 'Forside midterste kolonne', 'brondbytrust' ); ?></th>
+					<td>
+						<textarea id="brondbytrust_theme_options[frontpage-middle-text]" class="large-text" cols="30" rows="10" name="brondbytrust_theme_options[frontpage-middle-text]"><?php echo esc_textarea( $options['frontpage-middle-text'] ); ?></textarea>
+						<label class="description" for="brondbytrust_theme_options[frontpage-middle-text]"><?php _e( 'Tekst til forsidens midterste kolonne', 'brondbytrust' ); ?></label>
+					</td>
+				</tr>
+
+				<tr valign="top"><th scope="row"><?php _e( 'Højre kolonne overskrift', 'brondbytrust' ); ?></th>
+					<td>
+						<input id="brondbytrust_theme_options[frontpage-right-header]" class="regular-text" type="text" name="brondbytrust_theme_options[frontpage-right-header]" value="<?php esc_attr_e( $options['frontpage-right-header'] ); ?>" />
+						<label class="description" for="brondbytrust_theme_options[frontpage-right-header]"><?php _e( 'Overskrift til højre kolonne', 'brondbytrust' ); ?></label>
+					</td>
+				</tr>				
+				<tr valign="top"><th scope="row"><?php _e( 'Forside højre kolonne', 'brondbytrust' ); ?></th>
+					<td>
+						<textarea id="brondbytrust_theme_options[frontpage-right-text]" class="large-text" cols="30" rows="10" name="brondbytrust_theme_options[frontpage-right-text]"><?php echo esc_textarea( $options['frontpage-right-text'] ); ?></textarea>
+						<label class="description" for="brondbytrust_theme_options[frontpage-right-text]"><?php _e( 'Tekst til forsidens højre kolonne', 'brondbytrust' ); ?></label>
+					</td>
+				</tr>								
 			</table>
 
 			<p class="submit">
@@ -191,6 +201,7 @@ function theme_options_do_page() {
  * Sanitize and validate input. Accepts an array, return a sanitized array.
  */
 function theme_options_validate( $input ) {
+	/*
 	global $select_options, $radio_options;
 
 	// Our checkbox value is either 0 or 1
@@ -210,9 +221,17 @@ function theme_options_validate( $input ) {
 		$input['radioinput'] = null;
 	if ( ! array_key_exists( $input['radioinput'], $radio_options ) )
 		$input['radioinput'] = null;
+	*/
+
+	// Say our text option must be safe text with no HTML tags
+	$input['frontpage-left-header'] = wp_filter_nohtml_kses( $input['frontpage-left-header'] );
+	$input['frontpage-middle-header'] = wp_filter_nohtml_kses( $input['frontpage-middle-header'] );
+	$input['frontpage-right-header'] = wp_filter_nohtml_kses( $input['frontpage-right-header'] );
 
 	// Say our textarea option must be safe text with the allowed tags for posts
-	$input['sometextarea'] = wp_filter_post_kses( $input['sometextarea'] );
+	$input['frontpage-left-text'] = wp_filter_post_kses( $input['frontpage-left-text'] );
+	$input['frontpage-middle-text'] = wp_filter_post_kses( $input['frontpage-middle-text'] );
+	$input['frontpage-right-text'] = wp_filter_post_kses( $input['frontpage-right-text'] );
 
 	return $input;
 }

@@ -6,7 +6,6 @@
 			<div class="span8">
 				<div class="round-text-box post">
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-						<span class="byline">Publiceret <?php echo the_time('j. F Y'); ?>, Kl. <?php the_time('H:i'); ?></span>
 						<h2><?php the_title(); ?></h2>
 
 						<?php the_content(); ?>
@@ -27,7 +26,7 @@
 				<!-- <div class="round-text-box">
 					Her kommer en menu
 				</div>			 -->	
-				<?php get_sidebar(); ?>
+				<?php get_sidebar("test"); ?>
 			</div>
 		</div>
 	</div>

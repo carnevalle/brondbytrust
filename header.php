@@ -47,7 +47,7 @@
 	            <span class="icon-bar"></span>
 	          </a>
 	          <a class="brand" href="<?php echo home_url(); ?>" rel="nofollow">
-	            <img src="<?php echo get_stylesheet_directory_uri()?>/img/bstlogo.png" class="logo hidden-phone"/> 
+	            <img src="<?php echo get_stylesheet_directory_uri()?>/img/bstlogo-50px.png" class="logo hidden-phone"/> 
 	            <span class="sitename"><?php bloginfo('name'); ?></span>
 	          </a>	
 	          <div class="nav-collapse collapse">	

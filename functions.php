@@ -81,6 +81,33 @@ function brondbytrust_widgets_init() {
         'before_title' => '<h4>',
         'after_title' => '</h4>',
     ) );
+
+    register_sidebar( array(
+        'name' => 'footer_center_widget',
+        'id' => 'footer_center_widget',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '<h4>',
+        'after_title' => '</h4>',
+    ) );
+
+    register_sidebar( array(
+        'name' => 'footer_right_widget',
+        'id' => 'footer_right_widget',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '<h4>',
+        'after_title' => '</h4>',
+    ) );
+
+    register_sidebar( array(
+        'name' => 'sidebar',
+        'id' => 'sidebar',
+        'before_widget' => '<div class="round-text-box">',
+        'after_widget' => '</div>',
+        'before_title' => '<h4>',
+        'after_title' => '</h4>',
+    ) );
 }
 add_action( 'widgets_init', 'brondbytrust_widgets_init' );
 
@@ -95,6 +122,8 @@ remove_action( 'woocommerce_pagination', 'woocommerce_catalog_ordering', 20 );
 // We move related products to a different hook
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 add_action( 'woocommerce_after_single_product', 'woocommerce_output_related_products', 20 );
+
+remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 
 // We move the price to a different hook
 //remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );

@@ -30,22 +30,26 @@
       </div>
     </div>
 
+    <?php
+    $options = get_option('brondbytrust_theme_options');
+    ?>
+
     <div class="main">
       <div class="container">
         <div class="row">
           <div class="span4">
-            <h2>Åbenhed</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <h2><?php echo $options['frontpage-left-header']; ?></h2>
+            <?php echo $options['frontpage-left-text']; ?>
             <p><a class="btn" href="#">View details &raquo;</a></p>
           </div>
           <div class="span4">
-            <h2>Ansvarlighed</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <h2><h2><?php echo $options['frontpage-middle-header']; ?></h2></h2>
+            <?php echo $options['frontpage-middle-text']; ?>
             <p><a class="btn" href="#">View details &raquo;</a></p>
          </div>
           <div class="span4">
-            <h2>Demokrati</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            <h2><h2><?php echo $options['frontpage-right-header']; ?></h2></h2>
+            <?php echo $options['frontpage-right-text']; ?>
             <p><a class="btn" href="#">View details &raquo;</a></p>
           </div>
         </div>

@@ -4,7 +4,6 @@
   	<head>
 	    <meta charset="utf-8">
 
-
 		<title><?php
 			/*
 			 * Print the <title> tag based on what is being viewed.
@@ -66,25 +65,7 @@
 
 					<ul class="nav">
 						<?php wp_nav_menu($args); ?>
-
-						<?php if(!is_page( "cart" ) && !is_page( "checkout" )): ?>
-						<?php global $woocommerce; ?>
-
-						<li class="shopping-cart-menu hidden-desktop">
-							<a class="cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping cart', 'woothemes'); ?>">
-								<i class="icon-shopping-cart icon-white"></i>
-								<?php
-									if($woocommerce->cart->cart_contents_count > 0){
-										echo sprintf(_n('%d stk', '%d stk', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?> - <?php echo $woocommerce->cart->get_cart_total(); 
-									}else{
-										echo "Ingen varer i kurv";
-									}
-								?>
-							</a>
-						</li>
-						<?php endif; ?>
 					</ul>
-
 
 					<?php if(!is_page( "cart" ) && !is_page( "checkout" )): ?>
 					<?php global $woocommerce; ?>
@@ -106,3 +87,20 @@
 			</div>
 		</div>
 	</div>
+
+	<?php if(!is_page( "cart" ) && !is_page( "checkout" )): ?>
+	<?php global $woocommerce; ?>
+
+	<div class="shopping-cart-mobile hidden-desktop">
+		<a class="cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping cart', 'woothemes'); ?>">
+			<i class="icon-shopping-cart icon-white"></i>
+			<?php
+				if($woocommerce->cart->cart_contents_count > 0){
+					echo sprintf(_n('%d stk', '%d stk', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?> - <?php echo $woocommerce->cart->get_cart_total(); 
+				}else{
+					echo "Ingen varer i kurv";
+				}
+			?>
+		</a>
+	</div>
+	<?php endif; ?>

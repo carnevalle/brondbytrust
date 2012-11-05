@@ -16,7 +16,7 @@
 		$query_args = array(
 			'post_type'      => 'product',
 			'post_status'    => 'publish',
-			'product_cat' => 'fanaktier',
+			'product_cat' => 'fan-aktier',
 			'posts_per_page' => 10,
 			'no_found_rows'  => 1,
 			'meta_key' 	=> '_price',

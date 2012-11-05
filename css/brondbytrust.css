@@ -515,6 +515,10 @@ h3 {
 .product .pricetag .inner {
   padding: 5px;
 }
+.shopping-cart-mobile {
+  text-align: center;
+  padding: 5px;
+}
 .shopping-cart-desktop {
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 10px;
@@ -914,7 +918,7 @@ table.cart td.actions .checkout-button {
 }
 .site-background {
   background-color: #ffffff;
-  background-image: url('../img/bg_texture.jpg');
+  background-image: url('../img/subtle_dots.png');
 }
 body {
   color: #00344d;
@@ -1075,6 +1079,30 @@ body {
 .navbar .navbar-inner .nav .active > a {
   background-color: #00344d;
 }
+.text-box {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 15px 30px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.text-box h4 {
+  margin-top: 0;
+  color: #00344d;
+  background-color: #e0e0e2;
+  background-image: url('../img/noise.png');
+  margin: -15px -30px 15px -30px;
+  padding: 5px;
+}
+.text-box p {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.text-box.centered {
+  text-align: center;
+}
 .round-text-box {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -1181,6 +1209,16 @@ ul.list li a {
   color: rgba(0, 0, 0, 0.4);
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
 }
+@media (min-width: 980px) and (max-width: 1199px) {
+  #ytplayer {
+    height: 284px;
+  }
+}
+@media (min-width: 768px) and (max-width: 979px) {
+  #ytplayer {
+    height: 216px;
+  }
+}
 .label-bst {
   background-color: #005680;
   padding: 5px;
@@ -1189,18 +1227,13 @@ ul.list li a {
 }
 .front-feature {
   background-color: #ffffff;
-  background-image: url('../img/bg_texture.jpg');
+  background-image: url('../img/subtle_dots.png');
   padding: 30px 0 10px 0;
 }
 .main {
   padding: 30px 0 30px 0;
   background-color: #ffffff;
-  background-image: url('../img/bg_texture.jpg');
-}
-@media (max-width: 767px) {
-  .main {
-    margin-top: 10px;
-  }
+  background-image: url('../img/subtle_dots.png');
 }
 .sponsors {
   border-top: 1px solid rgba(0, 0, 0, 0.15);

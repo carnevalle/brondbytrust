@@ -7,7 +7,7 @@
 				<div class="text-box post">
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 						<h2><?php the_title(); ?></h2>
-
+						
 						<?php the_content(); ?>
 
 						<?php the_tags('<p class="tags"><span class="tags-title">Tags:</span> ', ', ', '</p>'); ?>
@@ -23,7 +23,7 @@
 				</div> 
 			</div>
 			<div class="span4">
-				<?php get_sidebar("sidebar"); ?>
+				<?php get_sidebar("test"); ?>
 			</div>
 		</div>
 	</div>

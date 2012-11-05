@@ -22,15 +22,19 @@ function brondbytrust_scripts_and_styles() {
     wp_register_style( 'twitter-bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap.min.css', array(), '', 'all' );
     wp_register_style( 'twitter-bootstrap-responsive', get_stylesheet_directory_uri() . '/css/bootstrap-responsive.css', array(), '', 'all' );
     wp_register_style( 'brondbytrust-stylesheet', get_stylesheet_directory_uri() . '/css/brondbytrust.css', array(), '', 'all' );
+    wp_register_style( 'flexslider2', get_stylesheet_directory_uri() . '/css/flexslider.css', array(), '', 'all' );
 
     wp_register_script( 'twitter-bootstrap-js', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '', true );
+    wp_register_script( 'flexslider2-js', get_stylesheet_directory_uri() . '/js/jquery.flexslider-min.js', array( 'jquery' ), '', true );
 
     wp_enqueue_style( 'twitter-bootstrap' );
     wp_enqueue_style( 'twitter-bootstrap-responsive' );
     wp_enqueue_style('brondbytrust-stylesheet');
+    //wp_enqueue_style('flexslider2');
 
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'twitter-bootstrap-js' );
+    //wp_enqueue_script( 'flexslider2-js' );
 }
 
 function brondbytrust_theme_support() {
@@ -103,7 +107,7 @@ function brondbytrust_widgets_init() {
     register_sidebar( array(
         'name' => 'sidebar',
         'id' => 'sidebar',
-        'before_widget' => '<div class="round-text-box">',
+        'before_widget' => '<div class="text-box">',
         'after_widget' => '</div>',
         'before_title' => '<h4>',
         'after_title' => '</h4>',
@@ -132,7 +136,7 @@ remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 //remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
 //add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_add_to_cart', 10 );
 
-add_image_size( 'shop_fanaktie', 250, 200, false );
+add_image_size( 'shop_fanaktie', 200, 200, true );
 
 // Ensure cart contents update when products are added to the cart via AJAX (place the following in functions.php)
 add_filter('add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment');

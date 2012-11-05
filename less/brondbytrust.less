@@ -12,9 +12,9 @@
 
 	//background-image: url('../img/tiny_grid.png');
 	//background-image: url('../img/square_bg.png');
-	//background-image: url('../img/subtle_dots.png');
+	background-image: url('../img/subtle_dots.png');
 	//background-image: url('../img/noise.png');
-	background-image: url('../img/bg_texture.jpg');
+	//background-image: url('../img/bg_texture.jpg');
 	//background-image: url('../img/bg_mesh.png');
 
 	//background-image: url('../img/noise.png');	
@@ -172,6 +172,33 @@ body{
 	}
 }
 
+.text-box{
+	.border-radius(3px);
+	background-color: @bstwhite;
+	//.box-shadow(1px 1px 5px rgba(0,0,0,.3));
+	border: 1px solid rgba(0,0,0,.1);
+	padding: 15px 30px;
+	margin-bottom: 10px;
+	overflow: hidden;
+	h4{
+		margin-top: 0;
+		color: @bstblue;
+		//text-shadow: 1px 1px rgba(0,0,0,0.3);
+		background-color: darken(@bstgrey,5%);
+		background-image: url('../img/noise.png');
+		margin:-15px -30px 15px -30px;
+		padding:5px;
+	}
+
+	p{
+		font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	}
+
+	&.centered{
+		text-align: center;
+	}
+}
+
 .round-text-box{
 	.border-radius(3px);
 	background-color: @bstwhite;
@@ -289,6 +316,16 @@ ul.list{
 	}
 }
 
+#ytplayer{
+	@media (min-width: 980px) and (max-width: 1199px) {
+		height: 284px;
+	}
+
+	@media (min-width: 768px) and (max-width: 979px) {
+		height: 216px;
+	}	
+}
+
 .label-bst{
 	background-color: lighten(@bstblue,10%);
 	padding: 5px;
@@ -304,9 +341,6 @@ ul.list{
 
 .main{
 	padding: 30px 0 30px 0;
-	@media (max-width: 767px) {
-		margin-top: 10px;
-	}
 
 	.site-background;
 

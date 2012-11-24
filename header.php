@@ -1,6 +1,6 @@
 <!doctype html>  
 
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
   	<head>
 	    <meta charset="utf-8">
 
@@ -22,7 +22,7 @@
 
 			// Add a page number if necessary:
 			if ( $paged >= 2 || $page >= 2 )
-				echo ' | ' . sprintf( __( 'Page %s', 'twentyeleven' ), max( $paged, $page ) );
+				echo ' | ' . sprintf( __( 'Page %s', 'brondbytrust' ), max( $paged, $page ) );
 
 			?></title>
 		<!-- <title><?php wp_title(''); ?> | <?php bloginfo('name'); ?></title> -->
@@ -33,9 +33,45 @@
 		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
+		<meta property="og:title" content="<?php wp_title( '|', true, 'right' ); ?><?php bloginfo('name'); ?>"/>
+		<meta property="og:type" content="<?php if (is_single() || is_page() && !is_front_page() ) { echo 'article'; } else { echo 'website';} ?>"/>
+		<meta property="og:image" content="<?php echo get_fbimg(); ?>"/>
+		<meta property="og:url" content="<?php the_permalink(); ?>"/>
+		<meta property="og:description" content="<?php echo $post->post_excerpt; ?>"/>
+		<meta property="og:site_name" content="<?php bloginfo('name'); ?>"/>
+		<meta property="fb:app_id" content="446992318697236"/>
+		<!-- <meta property="fb:page_id" content="500298129988016"/> -->
+
 	    <?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
+	<div id='fb-root'></div>
+
+	<script>
+	  window.fbAsyncInit = function() {
+	    // init the FB JS SDK
+	    FB.init({
+	      appId      : '446992318697236', // App ID from the App Dashboard
+	      channelUrl : '<?php echo get_template_directory_uri(); ?>/channel.html', // Channel File for x-domain communication
+	      status     : true, // check the login status upon init?
+	      cookie     : true, // set sessions cookies to allow your server to access the session?
+	      xfbml      : true  // parse XFBML tags on this page?
+	    });
+
+	    // Additional initialization code such as adding Event Listeners goes here
+	    //console.log("Facebook loaded");
+	  };
+
+	  // Load the SDK's source Asynchronously
+	  (function(d, debug){
+	     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement('script'); js.id = id; js.async = true;
+	     js.src = "//connect.facebook.net/en_US/all" + (debug ? "/debug" : "") + ".js";
+	     ref.parentNode.insertBefore(js, ref);
+	   }(document, /*debug*/ false));
+	</script>
+
 
 	<div class="navbar navbar-inverse">
 		<div class="navbar-inner">

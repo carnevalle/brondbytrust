@@ -22,19 +22,21 @@ function brondbytrust_scripts_and_styles() {
     wp_register_style( 'twitter-bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap.min.css', array(), '', 'all' );
     wp_register_style( 'twitter-bootstrap-responsive', get_stylesheet_directory_uri() . '/css/bootstrap-responsive.css', array(), '', 'all' );
     wp_register_style( 'brondbytrust-stylesheet', get_stylesheet_directory_uri() . '/css/brondbytrust.css', array(), '', 'all' );
-    wp_register_style( 'flexslider2', get_stylesheet_directory_uri() . '/css/flexslider.css', array(), '', 'all' );
+    wp_register_style( 'royalslider', get_stylesheet_directory_uri() . '/css/royalslider.css', array(), '', 'all' );
+    wp_register_style( 'royalslider-default', get_stylesheet_directory_uri() . '/css/rs-default-inverted.css', array(), '', 'all' );
 
     wp_register_script( 'twitter-bootstrap-js', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '', true );
-    wp_register_script( 'flexslider2-js', get_stylesheet_directory_uri() . '/js/jquery.flexslider-min.js', array( 'jquery' ), '', true );
+    wp_register_script( 'royalslider-js', get_stylesheet_directory_uri() . '/js/jquery.royalslider.min.js', array( 'jquery' ), '', true );
 
     wp_enqueue_style( 'twitter-bootstrap' );
     wp_enqueue_style( 'twitter-bootstrap-responsive' );
     wp_enqueue_style('brondbytrust-stylesheet');
-    //wp_enqueue_style('flexslider2');
+    //wp_enqueue_style('royalslider');
+    //wp_enqueue_style('royalslider-default');
 
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'twitter-bootstrap-js' );
-    //wp_enqueue_script( 'flexslider2-js' );
+    //wp_enqueue_script( 'royalslider-js' );
 }
 
 function brondbytrust_theme_support() {
@@ -115,6 +117,34 @@ function brondbytrust_widgets_init() {
 }
 add_action( 'widgets_init', 'brondbytrust_widgets_init' );
 
+
+/*
+Function to get image for Facebook Open Graph
+http://designpx.com/tutorials/facebook-open-graph-protocol-meta-tags/
+
+*/
+function get_fbimg() {
+    $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), '', '' );
+        if ( has_post_thumbnail($post->ID) ) {
+        $fbimage = $src[0];
+        } else {
+            global $post, $posts;
+            $fbimage = '';
+            $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i',
+            $post->post_content, $matches);
+            $fbimage = $matches [1] [0];
+        }
+        if(empty($fbimage)) {
+        $fbimage = "http://brondbytrust.dev/wp-content/themes/brondbytrust/img/bstlogo-150px.png";
+        }
+    return $fbimage;
+}
+
+
+/*
+    Here begins woocommerce hacking!
+*/
+
 // Remove reviews on WooCommerce products
 remove_action( 'woocommerce_product_tabs', 'woocommerce_product_reviews_tab', 30);
 remove_action( 'woocommerce_product_tab_panels', 'woocommerce_product_reviews_panel', 30);
@@ -137,6 +167,7 @@ remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 //add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_add_to_cart', 10 );
 
 add_image_size( 'shop_fanaktie', 200, 200, true );
+add_image_size( 'post-image', 770, 9999, true );
 
 // Ensure cart contents update when products are added to the cart via AJAX (place the following in functions.php)
 add_filter('add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment');
@@ -183,6 +214,7 @@ function woocommerce_output_related_products() {
 }
 
 // Hook in
+/*
 add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
  
 // Our hooked in function - $fields is passed via the filter!
@@ -198,7 +230,13 @@ function custom_override_checkout_fields( $fields ) {
  
      return $fields;
 }
+*/
 
+/*
+
+    This is a custom walker for the Twitter Bootstrap Nav Menu
+
+*/
 
 class Bootstrap_Walker_Nav_Menu extends Walker_Nav_Menu {
 

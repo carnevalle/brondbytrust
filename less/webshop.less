@@ -1,5 +1,9 @@
 .product{
 
+  .amount{
+    font-size: 1.3em;
+  }
+
 	.thumbnails{
 
 		> li{
@@ -252,6 +256,39 @@ table.my_account_orders {
 .cart_totals select {
   width: 100%;
 }
+/*--[ The variations ]--------------------------------------------------------------------------------*/
+
+table{
+  &.variations{
+    margin: 20px 0;
+    padding: 5px;
+    border: 0;
+    border-top: 1px solid darken(@bstgrey,10%);
+    border-bottom: 1px solid darken(@bstgrey,10%);
+    background-color: lighten(@bstgrey, 3%);
+
+    tr{
+      border: 0;
+
+      td{
+        &.label{
+          background-color: transparent;
+          color: @bstblue;
+          font-weight: bold !important;
+          text-shadow: 0 0 0 rgba(0, 0, 0, 0) !important;
+        }
+        
+        vertical-align: middle;
+        border: 0 !important;
+        padding: 5px;
+        select, label{
+          margin: 0;
+        }
+      }      
+    }
+  }
+}
+
 /*--[ The cart ]--------------------------------------------------------------------------------*/
 table.cart img {
   width: 32px;
@@ -290,6 +327,18 @@ table.cart td.actions .checkout-button {
 .cart-collaterals .cross-sells {
   width: 48%;
   float: right;
+
+  ul{
+    padding: 0;
+    margin: 0;
+    li{
+      list-style: none;
+      input{
+        float: left;
+        margin-right: 5px;
+      }
+    }
+  }  
 }
 .cart-collaterals .shipping_calculator {
   clear: right;
@@ -301,14 +350,13 @@ table.cart td.actions .checkout-button {
   width: 48%;
 }
 
-
-
 /* Checkout */
 .checkout {
   zoom: 1;
 
   input[type=text]{
-    padding: 15px 5px;
+    //padding: 15px 5px;
+    height: 35px;
   }
 
   textarea{
@@ -331,6 +379,8 @@ table.cart td.actions .checkout-button {
 
 .checkout textarea {
   width: 100%;
+
+  /*
   -webkit-box-sizing: border-box;
   /* Safari/Chrome, other WebKit */
 

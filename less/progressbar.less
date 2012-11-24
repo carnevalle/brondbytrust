@@ -1,0 +1,127 @@
+/* CSS3 Progress bars by Josh Sullivan
+   @jsullivandigs on Twitter
+   josh@dipperstove.com */
+
+.bar_mortice {
+  height: 20px;
+  //background: #777;
+  -moz-box-shadow: inset 0px 1px 1px 0px #333, inset 0px -1px 1px 0px #d0d0d0, 0px 1px 1px 0px #f0f0f0;
+  box-shadow: inset 0px 1px 1px 0px #333, inset 0px -1px 1px 0px #d0d0d0, 0px 1px 0px 0px #f0f0f0;
+  border: 1px solid #a0a0a0;
+  margin-bottom: 5px;
+  position: relative;
+
+  span{
+    position: absolute;
+    color: #666;
+    z-index: 1;
+    font-size: 11px;
+
+    &.next{
+      right: 0px;
+      top:-20px;
+    }
+
+    &.prev{
+      left: 0px;
+      top:-20px;      
+    }
+  }
+}
+
+.progressbar {
+  position: absolute;
+  z-index: 2;
+  height: 19px;
+  background: #FFF;
+  float: left;
+  background: -moz-linear-gradient(top,  #fff 0%, #e5e5e5 100%);
+  background: -webkit-linear-gradient(top,  #fff 0%,#e5e5e5 100%);
+  background: -o-linear-gradient(top,  #fff 0%,#e5e5e5 100%);
+  background: -ms-linear-gradient(top,  #fff 0%,#e5e5e5 100%);
+  background: linear-gradient(top,  #fff 0%,#e5e5e5 100%);
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #999;
+  padding-right: 5px;
+  color: white;
+  text-shadow: 1px 1px rgba(0,0,0,0.5);
+  text-align: right;
+
+  &.yellow{
+    color: @bstblue;
+    font-weight: bold;
+    text-shadow: 0px 0px rgba(0,0,0,0.5);
+  }
+}
+
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+  TINY
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+
+.mortice_tiny {
+  height: 7px;
+  background: #777;
+  -moz-box-shadow: inset 0px 1px 2px 0px #333;
+  box-shadow: inset 0px 1px 2px 0px #333;
+  border-width: 3px;
+}
+
+.progress_tiny {
+  height: 6px;
+  border-bottom: none;
+}
+
+
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+  STYLES
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+
+.bar_mortice, .progressbar{
+	&.rounded {
+	  -moz-border-radius: 3px;
+	  border-radius: 3px;
+	}
+	&.rounded .rounded {
+	  -moz-border-radius: 3px;
+	  border-radius: 3px;
+	}
+
+	&.rounded_tiny {
+	  -moz-border-radius: 5px;
+	  border-radius: 5px;
+	}
+	&.rounded_tiny .rounded_tiny {
+	  -moz-border-radius: 2px;
+	  border-radius: 2px;
+	}
+}
+
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+  COLORS
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+
+/* BST BLUE */
+
+.blue {
+  background: lighten(@bstblue, 15%);
+  border-top-color: lighten(@bstblue,55%);
+  border-bottom-color: darken(@bstblue,20%);
+}
+.blue_mortice {
+  background: darken(@bstblue,40%);
+  border-color: darken(@bstblue,5%);
+  -moz-box-shadow: inset 0px 1px 2px 0px #333, inset 0px -1px 1px 0px #08c, 0px 1px 1px 0px #f0f0f0;
+  box-shadow: inset 0px 1px 2px 0px #333, inset 0px -1px 1px 0px #08c, 0px 1px 0px 0px #f0f0f0;
+}
+
+.yellow {
+  background: @bstyellow;
+  border-top-color: lighten(@bstyellow,30%);
+  border-bottom-color: darken(@bstyellow,10%);
+}
+.yellow_mortice {
+  background: #888;
+  border-color: darken(@bstyellow,15%);
+  //-moz-box-shadow: inset 0px 1px 2px 0px #333, inset 0px -1px 1px 0px #08c, 0px 1px 1px 0px #f0f0f0;
+  //box-shadow: inset 0px 1px 2px 0px #333, inset 0px -1px 1px 0px #08c, 0px 1px 0px 0px #f0f0f0;
+}

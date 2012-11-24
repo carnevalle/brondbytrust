@@ -85,70 +85,6 @@ function theme_options_do_page() {
 
 			<table class="form-table">
 
-				<!--
-				<tr valign="top"><th scope="row"><?php _e( 'A checkbox', 'brondbytrust' ); ?></th>
-					<td>
-						<input id="brondbytrust_theme_options[option1]" name="brondbytrust_theme_options[option1]" type="checkbox" value="1" <?php checked( '1', $options['option1'] ); ?> />
-						<label class="description" for="brondbytrust_theme_options[option1]"><?php _e( 'Sample checkbox', 'brondbytrust' ); ?></label>
-					</td>
-				</tr>
-				
-
-				<tr valign="top"><th scope="row"><?php _e( 'Some text', 'brondbytrust' ); ?></th>
-					<td>
-						<input id="brondbytrust_theme_options[sometext]" class="regular-text" type="text" name="brondbytrust_theme_options[sometext]" value="<?php esc_attr_e( $options['sometext'] ); ?>" />
-						<label class="description" for="brondbytrust_theme_options[sometext]"><?php _e( 'Sample text input', 'brondbytrust' ); ?></label>
-					</td>
-				</tr>
-
-				<tr valign="top"><th scope="row"><?php _e( 'Select input', 'brondbytrust' ); ?></th>
-					<td>
-						<select name="brondbytrust_theme_options[selectinput]">
-							<?php
-								$selected = $options['selectinput'];
-								$p = '';
-								$r = '';
-
-								foreach ( $select_options as $option ) {
-									$label = $option['label'];
-									if ( $selected == $option['value'] ) // Make default first in list
-										$p = "\n\t<option style=\"padding-right: 10px;\" selected='selected' value='" . esc_attr( $option['value'] ) . "'>$label</option>";
-									else
-										$r .= "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . "'>$label</option>";
-								}
-								echo $p . $r;
-							?>
-						</select>
-						<label class="description" for="brondbytrust_theme_options[selectinput]"><?php _e( 'Sample select input', 'brondbytrust' ); ?></label>
-					</td>
-				</tr>
-
-				<tr valign="top"><th scope="row"><?php _e( 'Radio buttons', 'brondbytrust' ); ?></th>
-					<td>
-						<fieldset><legend class="screen-reader-text"><span><?php _e( 'Radio buttons', 'brondbytrust' ); ?></span></legend>
-						<?php
-							if ( ! isset( $checked ) )
-								$checked = '';
-							foreach ( $radio_options as $option ) {
-								$radio_setting = $options['radioinput'];
-
-								if ( '' != $radio_setting ) {
-									if ( $options['radioinput'] == $option['value'] ) {
-										$checked = "checked=\"checked\"";
-									} else {
-										$checked = '';
-									}
-								}
-								?>
-								<label class="description"><input type="radio" name="brondbytrust_theme_options[radioinput]" value="<?php esc_attr_e( $option['value'] ); ?>" <?php echo $checked; ?> /> <?php echo $option['label']; ?></label><br />
-								<?php
-							}
-						?>
-						</fieldset>
-					</td>
-				</tr>
-				-->
-
 				<tr valign="top"><th scope="row"><?php _e( 'Venstre kolonne overskrift', 'brondbytrust' ); ?></th>
 					<td>
 						<input id="brondbytrust_theme_options[frontpage-left-header]" class="regular-text" type="text" name="brondbytrust_theme_options[frontpage-left-header]" value="<?php esc_attr_e( $options['frontpage-left-header'] ); ?>" />
@@ -186,7 +122,25 @@ function theme_options_do_page() {
 						<textarea id="brondbytrust_theme_options[frontpage-right-text]" class="large-text" cols="30" rows="10" name="brondbytrust_theme_options[frontpage-right-text]"><?php echo esc_textarea( $options['frontpage-right-text'] ); ?></textarea>
 						<label class="description" for="brondbytrust_theme_options[frontpage-right-text]"><?php _e( 'Tekst til forsidens højre kolonne', 'brondbytrust' ); ?></label>
 					</td>
-				</tr>								
+				</tr>
+				<tr valign="top"><th scope="row"><?php _e( 'Status Fundraising', 'brondbytrust' ); ?></th>
+					<td>
+						<input id="brondbytrust_theme_options[status-fundraising]" class="large-text" cols="30" rows="10" name="brondbytrust_theme_options[status-fundraising]" value="<?php esc_attr_e( $options['status-fundraising'] ); ?>" />
+						<label class="description" for="brondbytrust_theme_options[status-fundraising]"><?php _e( 'Status for fundraising prev|current|next', 'brondbytrust' ); ?></label>
+					</td>
+				</tr>
+				<tr valign="top"><th scope="row"><?php _e( 'Status Medlemmer', 'brondbytrust' ); ?></th>
+					<td>
+						<input id="brondbytrust_theme_options[status-medlemmer]" class="large-text" cols="30" rows="10" name="brondbytrust_theme_options[status-medlemmer]" value="<?php esc_attr_e( $options['status-medlemmer'] ); ?>" />
+						<label class="description" for="brondbytrust_theme_options[status-medlemmer]"><?php _e( 'Status for medlemmer prev|current|next', 'brondbytrust' ); ?></label>
+					</td>
+				</tr>
+				<tr valign="top"><th scope="row"><?php _e( 'Senest opdateret', 'brondbytrust' ); ?></th>
+					<td>
+						<input id="brondbytrust_theme_options[status-updated]" class="large-text" cols="30" rows="10" name="brondbytrust_theme_options[status-updated]" value="<?php esc_attr_e( $options['status-updated'] ); ?>" />
+						<label class="description" for="brondbytrust_theme_options[status-updated]"><?php _e( 'Senest opdateret', 'brondbytrust' ); ?></label>
+					</td>
+				</tr>				
 			</table>
 
 			<p class="submit">
